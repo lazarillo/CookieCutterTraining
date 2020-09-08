@@ -1,4 +1,4 @@
-.PHONY: az_create_storage az_upload_data toy_dataset project_dir clean lint
+.PHONY: az_create_storage az_upload_data toy_dataset project_dir clean lint git_init
 
 #################################################################################
 # GLOBALS                                                                       #
@@ -9,7 +9,7 @@ RESOURCE_GROUP = {{ cookiecutter.azure_resource_group}}
 STORAGE_ACCOUNT = {{ cookiecutter.azure_storage_account}}
 STORAGE_CONTAINER = {{ cookiecutter.azure_storage_container}}
 ASSIGNEE = {{ cookiecutter.author_azure_account_active_directory}}
-
+GIT_PATH = {{ cookiecutter.git_repo_path }}
 
 
 ifeq (,$(shell which conda))
@@ -21,6 +21,16 @@ endif
 #################################################################################
 # COMMANDS                                                                      #
 #################################################################################
+
+## Simplify creating a Git Repo from the template
+git_init:
+	cd $(PROJECT_DIR)
+	git init
+	git add .
+	git add .gitignore
+	git commit -m "Initial commit of cookiecutter folder structure"
+	git remote add origin $(GIT_PATH)
+	git push -u origin master
 
 ## Create an Azure Blob Storage Account and Container and Add Role
 az_create_storage:

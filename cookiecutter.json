@@ -3,6 +3,7 @@
   "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
   "author": "Please add your name",
   "description": "Hvad er jeg? Detaljer...",
+  "git_repo_path": "Like 'git@github.com:<account>/<repo>.git' or 'git@ssh.dev.azure.com:v3/<organization>/<project>/<repo>'",
   "author_azure_account_active_directory": "Typically your email associated with your AAD",
   "azure_resource_group": "Please enter the RG (it must exist already, it won't be created",
   "azure_storage_account": "Please enter storage account (it *will* be created)",
