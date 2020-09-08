@@ -1,0 +1,10 @@
+{
+  "project_name": "CoolNewProject",
+  "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "author": "Please add your name",
+  "description": "Hvad er jeg? Detaljer...",
+  "author_azure_account_active_directory": "Typically your email associated with your AAD",
+  "azure_resource_group": "Please enter the RG (it must exist already, it won't be created",
+  "azure_storage_account": "Please enter storage account (it *will* be created)",
+  "azure_storage_container": "Please enter container name (it will also be created)"
+}
