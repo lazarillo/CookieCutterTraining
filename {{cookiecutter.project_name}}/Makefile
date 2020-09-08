@@ -9,8 +9,14 @@ RESOURCE_GROUP = {{ cookiecutter.azure_resource_group}}
 STORAGE_ACCOUNT = {{ cookiecutter.azure_storage_account}}
 STORAGE_CONTAINER = {{ cookiecutter.azure_storage_container}}
 ASSIGNEE = {{ cookiecutter.author_azure_account_active_directory}}
-GIT_PATH = {{ cookiecutter.git_repo_path }}
 
+
+
+ifeq ("ssh", {{ cookiecutter.ssh_or_https }})
+GIT_PATH=git@ssh.dev.azure.com:v3/{{ cookiecutter.azure_org }}/{{ cookiecutter.azure_project/{{ cookiecutter.repo_name}}
+else
+GIT_PATH=https@fix-me-later
+endif
 
 ifeq (,$(shell which conda))
 HAS_CONDA=False
